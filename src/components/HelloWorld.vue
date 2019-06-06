@@ -5,11 +5,12 @@
     </div>
 </template>
 
-import katex from 'katex'
-import "katex/dist/katex.min.css"
-import 'katex/dist/contrib/mhchem'
 
 <script>
+import katex from 'katex'
+import 'katex/dist/contrib/mhchem'
+import "katex/dist/katex.min.css"
+
 export default {
   data () {
     return {
@@ -18,11 +19,12 @@ export default {
   },
   computed: {
     parsed: function (){
+      console.log("wrong"+this.ce)
       return katex.renderToString(this.ce, {displayMode: true})
     }
   },
   created () {
-    
+    console.log("abc"+this.ce)
   }
 }
 </script>
