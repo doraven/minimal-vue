@@ -11,6 +11,8 @@ import katex from 'katex'
 import 'katex/dist/contrib/mhchem'
 import "katex/dist/katex.min.css"
 
+// import './test.js'
+
 export default {
   data () {
     return {
@@ -19,12 +21,18 @@ export default {
   },
   computed: {
     parsed: function (){
-      console.log("wrong"+this.ce)
-      return katex.renderToString(this.ce, {displayMode: true})
+      // console.log("wrong"+this.ce)
+
+      try {
+        return katex.renderToString(this.ce, {displayMode: true})
+      } catch (e) {
+        return e.message
+      }
+
     }
   },
   created () {
-    console.log("abc"+this.ce)
+    // console.log("abc"+this.ce)
   }
 }
 </script>
