@@ -1,2 +1,0 @@
-# minimal-vue
-for tests
